@@ -3,7 +3,7 @@ from cffi import FFI
 cffi = FFI()
 cffi.cdef(
     """
-      void printZ(char* messageZ);
+      void printZ(char* message);
     """
 )
 
