@@ -40,6 +40,9 @@ def toStruct(some_dict):
     some_struct.stringZ = cffi.from_buffer(
         "char[]", some_dict["stringZ"].encode("utf-8")
     )
+
+    # note some_struct remains alive due to some_struct[0]
+    # see https://cffi.readthedocs.io/en/latest/ref.html#ffi-new
     return some_struct[0]
 
 
